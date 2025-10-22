@@ -1,14 +1,34 @@
 
-import { Stack } from 'react-bootstrap'
+import { Col, Row, Stack, Form } from 'react-bootstrap'
+import CreatableSelect from 'react-select/creatable'
 
 export const NoteForm = () => {
   return (
     <form action="">
         <Stack gap={4}>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+            <Row>
+                <Col>
+                <Form.Group controlId= "title">
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control required />
+                </Form.Group>
+                </Col>
+                <Col>
+                <Form.Group controlId= "tags">
+                    <Form.Label>Tags</Form.Label>
+                    <CreatableSelect isMulti />
+                </Form.Group>
+                </Col>
+            </Row>
+             <Form.Group controlId= "markdown">
+                    <Form.Label>Body</Form.Label>
+                    <Form.Control as="textarea" rows={15} />
+                </Form.Group>
+                <Stack direction='horizontal' gap={2} className='justify-content-end'>
+                    <button type="submit" className='btn btn-primary'>Save</button>
+                    <button type="button" className='btn btn-secondary'>Cancel</button>
+                </Stack>
+            
         </Stack>
     </form>
   )
