@@ -6,6 +6,20 @@ import NewNote from './NewNote'
 import { Navigate } from 'react-router-dom'
 
 
+export type Note ={
+  id: string
+} & NoteData
+export type NoteData= {
+  title: string
+  markdown: string
+  tags: Tag[]
+
+}
+export type Tag={
+  id: string
+  label: string
+}
+
 
 function App() {
 

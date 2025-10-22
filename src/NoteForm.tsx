@@ -3,13 +3,23 @@ import { Col, Row, Stack, Form } from 'react-bootstrap'
 import CreatableSelect from 'react-select/creatable'
 import { Link } from 'react-router-dom'
 import { useRef, type FormEvent } from 'react' 
+import type { NoteData } from './App'
 
-export const NoteForm = () => {
+type NoteFormProps={
+    onSubmit: (data: NoteData)=> void
+}
+
+export function NoteForm({onSubmit}: NoteFormProps){
      const titleRef = useRef<HTMLInputElement>(null)
  const markdownRef = useRef<HTMLTextAreaElement>(null)
 
  function handleasubmit(e: FormEvent){
     e.preventDefault()
+    onSubmit({
+        title: titleRef.current!.value,
+        markdown: markdownRef.current!.value,
+        tags: []
+    })
  }
   return (
 
