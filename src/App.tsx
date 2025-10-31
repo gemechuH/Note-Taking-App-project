@@ -37,7 +37,7 @@ export type Tag={
 
 
 function App() {
-  const [notes, setNotes] = useLocalStorage<Note[]>('NOTES', []);
+  const [, setNotes] = useLocalStorage<Note[]>('NOTES', []);
     function onCreateNote({ title, markdown, tags }: NoteData) {
     setNotes(prevNotes => [
       ...prevNotes,
