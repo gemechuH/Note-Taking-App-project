@@ -4,7 +4,7 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import NewNote from './NewNote'
 import { Navigate } from 'react-router-dom'
-import { useLocalStorage } from './useLocalStorage'
+import { useLocalStorage } from './UseLocalStorage'
 import { v4 as uuidV4 } from "uuid"
 
 
